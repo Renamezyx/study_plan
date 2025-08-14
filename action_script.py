@@ -25,8 +25,8 @@ def write_notes_to_readme(notes_list, readme_path="README.MD"):
             dst.write(line)
 
     with open(readme_path, "a", encoding="utf-8") as f:
+        f.write(f"## notes\n")
         for idx, note in enumerate(notes_list, start=1):
-            f.write(f"## notes\n")
             f.write(f"```shell\n")
             f.write(note + "\n\n")
             f.write(f"```")
