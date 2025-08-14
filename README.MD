@@ -35,7 +35,7 @@
 - [ ] 26. 异步任务 — Celery / asyncio（注册后异步发送邮件）
 - [ ] 27. 中间件设计 — 请求日志、认证（API 全局中间件）
 - [ ] 28. 总结 — 部署上线（Docker 部署）
-## 
+## notes
 ```shell
 next(iter(dict_obj)) 等价 list(dict_obj.keys())[0]
 next(iter(dict_obj)) 更加快速 节省空间
