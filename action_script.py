@@ -20,11 +20,11 @@ def find_notes_in_main_files(root_dir="."):
 
 def write_notes_to_readme(notes_list, readme_path="README.MD"):
     with open(".readme.bak", "r", encoding="utf-8") as src, \
-            open(readme_path, "a", encoding="utf-8") as dst:
+            open(readme_path, "w", encoding="utf-8") as dst:
         for line in src:
             dst.write(line)
 
-    with open(readme_path, "w+", encoding="utf-8") as f:
+    with open(readme_path, "a", encoding="utf-8") as f:
         for idx, note in enumerate(notes_list, start=1):
             f.write(f"### \n")
             f.write(f"```shell\n")
