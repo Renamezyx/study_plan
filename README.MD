@@ -1,7 +1,7 @@
 # Python 4 周训练计划
 
 ## 第 1 周：语言进阶 & Pythonic 思维
-- [ ] 1. 数据结构底层 — list/dict/set 内存结构、时间复杂度（用 dict 模拟 LRU 缓存）
+- [x] 1. 数据结构底层 — list/dict/set 内存结构、时间复杂度（用 dict 模拟 LRU 缓存）
 - [ ] 2. 迭代器与生成器 — iter() / next() / yield / yield from（可分页生成器读取大文件）
 - [ ] 3. 装饰器与闭包 — functools.wraps（统计函数执行时间装饰器）
 - [ ] 4. 上下文管理器 — __enter__ / __exit__（自动计时并记录日志的类）
