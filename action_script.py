@@ -24,7 +24,7 @@ def find_studied_in_root_dir(root_dir="."):
         full_path = os.path.join(root_dir, name)
         if os.path.isdir(full_path):
             if "day_" in name:
-                studied_list.append(int(name.split("day_")[1]))
+                res.append(int(name.split("day_")[1]))
     return res
 
 
@@ -35,7 +35,7 @@ def write_notes_to_readme(notes_list, studied_list, readme_path="README.MD"):
             matches = re.findall(r"\[ \] (\d+)", line)
             if len(matches) > 0:
                 if int(matches[0]) in studied_list:
-                    line.replace("[ ]", "[x]", 1)
+                    line = line.replace("[ ]", "[x]", 1)
             dst.write(line)
     with open(readme_path, "a", encoding="utf-8") as f:
         f.write(f"## Notes\n")
