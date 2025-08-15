@@ -2,7 +2,7 @@
 
 ## 第 1 周：语言进阶 & Pythonic 思维
 - [x] 1. 数据结构底层 — list/dict/set 内存结构、时间复杂度（用 dict 模拟 LRU 缓存）
-- [ ] 2. 迭代器与生成器 — iter() / next() / yield / yield from（可分页生成器读取大文件）
+- [x] 2. 迭代器与生成器 — iter() / next() / yield / yield from（可分页生成器读取大文件）
 - [ ] 3. 装饰器与闭包 — functools.wraps（统计函数执行时间装饰器）
 - [ ] 4. 上下文管理器 — __enter__ / __exit__（自动计时并记录日志的类）
 - [ ] 5. Pythonic 写法 — 列表推导式、生成器表达式、解包（一行提取 CSV 第 3 列）
@@ -39,5 +39,11 @@
 ```shell
 next(iter(dict_obj)) 等价 list(dict_obj.keys())[0]
 next(iter(dict_obj)) 更加快速 节省空间
+
+``````shell
+如果函数内部使用了 yield，这个函数就不再是普通函数，而是生成器函数
+ 调用这个函数 不会立即执行函数体，而是返回一个生成器对象（iterator）
+ 每次调用 next() 或在 for 循环中迭代时，函数从上一次 yield 停下的地方继续执行
+ yield 相当于“返回一个值，同时记住函数执行状态”。
 
 ```
