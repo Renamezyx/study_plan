@@ -18,12 +18,25 @@ def find_notes_in_main_files(root_dir="."):
     return notes_list
 
 
-def write_notes_to_readme(notes_list, readme_path="README.MD"):
+def find_studied_in_root_dir(root_dir="."):
+    res = []
+    for name in os.listdir(root_dir):
+        full_path = os.path.join(root_dir, name)
+        if os.path.isdir(full_path):
+            if "day_" in name:
+                studied_list.append(int(name.split("day_")[1]))
+    return res
+
+
+def write_notes_to_readme(notes_list, studied_list, readme_path="README.MD"):
     with open(".readme.bak", "r", encoding="utf-8") as src, \
             open(readme_path, "w", encoding="utf-8") as dst:
         for line in src:
+            matches = re.findall(r"\[ \] (\d+)", line)
+            if len(matches) > 0:
+                if int(matches[0]) in studied_list:
+                    line.replace("[ ]", "[x]", 1)
             dst.write(line)
-
     with open(readme_path, "a", encoding="utf-8") as f:
         f.write(f"## Notes\n")
         for idx, note in enumerate(notes_list, start=1):
@@ -34,5 +47,6 @@ def write_notes_to_readme(notes_list, readme_path="README.MD"):
 
 if __name__ == "__main__":
     notes = find_notes_in_main_files(".")
-    write_notes_to_readme(notes)
+    studied_list = find_studied_in_root_dir()
+    write_notes_to_readme(notes_list=notes, studied_list=studied_list)
     print(f"Found {len(notes)} notes and wrote them to README.MD")
