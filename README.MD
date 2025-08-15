@@ -3,7 +3,7 @@
 ## 第 1 周：语言进阶 & Pythonic 思维
 - [x] 1. 数据结构底层 — list/dict/set 内存结构、时间复杂度（用 dict 模拟 LRU 缓存）
 - [x] 2. 迭代器与生成器 — iter() / next() / yield / yield from（可分页生成器读取大文件）
-- [ ] 3. 装饰器与闭包 — functools.wraps（统计函数执行时间装饰器）
+- [x] 3. 装饰器与闭包 — functools.wraps（统计函数执行时间装饰器）
 - [ ] 4. 上下文管理器 — __enter__ / __exit__（自动计时并记录日志的类）
 - [ ] 5. Pythonic 写法 — 列表推导式、生成器表达式、解包（一行提取 CSV 第 3 列）
 - [ ] 6. 标准库精通 — collections / itertools / functools（按日期聚合数据）
@@ -36,6 +36,12 @@
 - [ ] 27. 中间件设计 — 请求日志、认证（API 全局中间件）
 - [ ] 28. 总结 — 部署上线（Docker 部署）
 ## Notes
+```shell
+闭包是嵌套函数的组合：
+外层函数返回内层函数
+内层函数可以访问外层函数的局部变量，即使外层函数已经执行结束
+```
+
 ```shell
 next(iter(dict_obj)) 等价 list(dict_obj.keys())[0]
 next(iter(dict_obj)) 更加快速 节省空间
