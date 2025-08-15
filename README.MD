@@ -4,7 +4,7 @@
 - [x] 1. 数据结构底层 — list/dict/set 内存结构、时间复杂度（用 dict 模拟 LRU 缓存）
 - [x] 2. 迭代器与生成器 — iter() / next() / yield / yield from（可分页生成器读取大文件）
 - [x] 3. 装饰器与闭包 — functools.wraps（统计函数执行时间装饰器）
-- [ ] 4. 上下文管理器 — __enter__ / __exit__（自动计时并记录日志的类）
+- [x] 4. 上下文管理器 — __enter__ / __exit__（自动计时并记录日志的类）
 - [ ] 5. Pythonic 写法 — 列表推导式、生成器表达式、解包（一行提取 CSV 第 3 列）
 - [ ] 6. 标准库精通 — collections / itertools / functools（按日期聚合数据）
 - [ ] 7. 总结 + 练习 — 刷 5 道 LeetCode Easy（普通写法 vs Pythonic 写法）
@@ -45,6 +45,16 @@
 ```shell
 next(iter(dict_obj)) 等价 list(dict_obj.keys())[0]
 next(iter(dict_obj)) 更加快速 节省空间
+```
+
+```shell
+上下文管理器协议 
+__enter__ / __exit__ 只有配合with语句才会自动调用嘛
+__exit__ 会自动传入参数 
+    exc_type：异常的类型（无异常时是 None）
+    exc_val：异常实例（无异常时是 None）
+    exc_tb：traceback 对象（无异常时是 None）
+    如果 __exit__ 返回 True，Python 会吞掉异常，不再向外抛， False 则会继续外抛
 ```
 
 ```shell
