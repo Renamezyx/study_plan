@@ -41,8 +41,8 @@ def write_notes_to_readme(notes_list, studied_list, readme_path="README.MD"):
         f.write(f"## Notes\n")
         for idx, note in enumerate(notes_list, start=1):
             f.write(f"```shell\n")
-            f.write(note + "\n\n")
-            f.write(f"```")
+            f.write(note + "\n")
+            f.write(f"```\n\n")
 
 
 if __name__ == "__main__":
