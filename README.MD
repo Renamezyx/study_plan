@@ -5,9 +5,9 @@
 - [x] 2. 迭代器与生成器 — iter() / next() / yield / yield from（可分页生成器读取大文件）
 - [x] 3. 装饰器与闭包 — functools.wraps（统计函数执行时间装饰器）
 - [x] 4. 上下文管理器 — __enter__ / __exit__（自动计时并记录日志的类）
-- [ ] 5. Pythonic 写法 — 列表推导式、生成器表达式、解包（一行提取 CSV 第 3 列）
-- [ ] 6. 标准库精通 — collections / itertools / functools（按日期聚合数据）
-- [ ] 7. 总结 + 练习 — 刷 5 道 LeetCode Easy（普通写法 vs Pythonic 写法）
+- [x] 5. Pythonic 写法 — 列表推导式、生成器表达式、解包（一行提取 CSV 第 3 列）
+- [x] 6. 标准库精通 — collections / itertools / functools（按日期聚合数据）
+- [x] 7. 总结 + 练习 — 刷 5 道 LeetCode Easy（普通写法 vs Pythonic 写法）
 
 ## 第 2 周：工程化能力
 - [ ] 8. 项目结构 — 包与模块、入口文件（三层结构 CLI 项目）
@@ -48,8 +48,14 @@ next(iter(dict_obj)) 更加快速 节省空间
 ```
 
 ```shell
+(x % 3 for x in range(100)) 生成器表达式 占用较小内存 生成器
+[x % 3 for x in range(100)] 列表推导式 占用较多内存 一次性加载
+{x % 3 for x in range(100)} 集合推导式 惰性 且去重 一次性加载
+```
+
+```shell
 上下文管理器协议 
-__enter__ / __exit__ 只有配合with语句才会自动调用嘛
+__enter__ / __exit__ 只有配合with语句才会自动调用
 __exit__ 会自动传入参数 
     exc_type：异常的类型（无异常时是 None）
     exc_val：异常实例（无异常时是 None）
