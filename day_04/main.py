@@ -30,7 +30,7 @@ with TimerLogger("计算平方和"):
 
 notes = """
 上下文管理器协议 
-__enter__ / __exit__ 只有配合with语句才会自动调用嘛
+__enter__ / __exit__ 只有配合with语句才会自动调用
 __exit__ 会自动传入参数 
     exc_type：异常的类型（无异常时是 None）
     exc_val：异常实例（无异常时是 None）
