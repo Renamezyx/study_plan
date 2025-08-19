@@ -10,13 +10,13 @@
 - [x] 7. 总结 + 练习 — 刷 5 道 LeetCode Easy（普通写法 vs Pythonic 写法）
 
 ## 第 2 周：工程化能力
-- [ ] 8. 项目结构 — 包与模块、入口文件（三层结构 CLI 项目）
-- [ ] 9. 依赖管理 — Poetry / venv / requirements（Poetry 创建项目并锁版本）
-- [ ] 10. 测试框架 — pytest、mock、参数化（3 个单元测试）
-- [ ] 11. 格式化工具 — black / isort / flake8 / pre-commit（自动检查）
-- [ ] 12. 日志与配置 — logging / .env / pydantic（日志 & 配置管理）
-- [ ] 13. 异常处理 — 自定义异常、分层捕获（统一异常处理器）
-- [ ] 14. 总结 — CLI 项目打包可执行文件（pyinstaller）
+- [x] 8. 项目结构 — 包与模块、入口文件（三层结构 CLI 项目）
+- [x] 9. 依赖管理 — Poetry / venv / requirements（Poetry 创建项目并锁版本）
+- [x] 10. 测试框架 — pytest、mock、参数化（3 个单元测试）
+- [x] 11. 格式化工具 — black / isort / flake8 / pre-commit（自动检查）
+- [x] 12. 日志与配置 — logging / .env / pydantic（日志 & 配置管理）
+- [x] 13. 异常处理 — 自定义异常、分层捕获（统一异常处理器）
+- [x] 14. 总结 — CLI 项目打包可执行文件（pyinstaller）
 
 ## 第 3 周：设计模式与业务建模
 - [ ] 15. 单例模式 — 应用场景、线程安全（全局配置单例类）
