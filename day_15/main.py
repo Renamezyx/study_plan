@@ -14,6 +14,26 @@ notes = """
 以后再 import xxx，不会重新执行模块代码，而是直接从 sys.modules 里取缓存的对象。
 模块级变量是全局共享的
 在模块里定义的变量、类、函数，导入它的所有地方访问到的都是同一份。
+
+class SingletonMeta(type):
+    _instances = {}
+    _lock = threading.Lock()
+
+    def __call__(cls, *args, **kwargs):
+        with cls._lock:
+            if cls not in cls._instances:
+                cls._instances[cls] = super.__call__(*args, **kwargs)
+        return cls._instances[cls]
+
+
+class A(metaclass=SingletonMeta):
+    # A 也变成了单例模式
+    pass
+
+    
+'metaclass' 是类的构造工厂
+类是对象，类的工厂就是 metaclass
+类 → 生产对象；元类 → 生产类
 """
 
 
