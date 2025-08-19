@@ -37,14 +37,31 @@
 - [ ] 28. 总结 — 部署上线（Docker 部署）
 ## Notes
 ```shell
+next(iter(dict_obj)) 等价 list(dict_obj.keys())[0]
+next(iter(dict_obj)) 更加快速 节省空间
+```
+
+```shell
+如果函数内部使用了 yield，这个函数就不再是普通函数，而是生成器函数
+调用这个函数 不会立即执行函数体，而是返回一个生成器对象（iterator）
+每次调用 next() 或在 for 循环中迭代时，函数从上一次 yield 停下的地方继续执行
+yield 相当于“返回一个值，同时记住函数执行状态”
+```
+
+```shell
 闭包是嵌套函数的组合：
 外层函数返回内层函数
 内层函数可以访问外层函数的局部变量，即使外层函数已经执行结束
 ```
 
 ```shell
-next(iter(dict_obj)) 等价 list(dict_obj.keys())[0]
-next(iter(dict_obj)) 更加快速 节省空间
+上下文管理器协议 
+__enter__ / __exit__ 只有配合with语句才会自动调用
+__exit__ 会自动传入参数 
+    exc_type：异常的类型（无异常时是 None）
+    exc_val：异常实例（无异常时是 None）
+    exc_tb：traceback 对象（无异常时是 None）
+    如果 __exit__ 返回 True，Python 会吞掉异常，不再向外抛， False 则会继续外抛
 ```
 
 ```shell
@@ -66,22 +83,5 @@ next(iter(dict_obj)) 更加快速 节省空间
 以后再 import xxx，不会重新执行模块代码，而是直接从 sys.modules 里取缓存的对象。
 模块级变量是全局共享的
 在模块里定义的变量、类、函数，导入它的所有地方访问到的都是同一份。
-```
-
-```shell
-上下文管理器协议 
-__enter__ / __exit__ 只有配合with语句才会自动调用
-__exit__ 会自动传入参数 
-    exc_type：异常的类型（无异常时是 None）
-    exc_val：异常实例（无异常时是 None）
-    exc_tb：traceback 对象（无异常时是 None）
-    如果 __exit__ 返回 True，Python 会吞掉异常，不再向外抛， False 则会继续外抛
-```
-
-```shell
-如果函数内部使用了 yield，这个函数就不再是普通函数，而是生成器函数
-调用这个函数 不会立即执行函数体，而是返回一个生成器对象（iterator）
-每次调用 next() 或在 for 循环中迭代时，函数从上一次 yield 停下的地方继续执行
-yield 相当于“返回一个值，同时记住函数执行状态”
 ```
 
